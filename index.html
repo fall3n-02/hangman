@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hangman</title>
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./fonts/fonts.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="icon" type="image/png" href="./images/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon.ico">
+</head>
+
+<body class="page">
+  <section class="word-section">
+  </section>
+  <section class="control-items">
+    <div class="word-info">
+      <p class="word-description">description</p>
+      <button class="new-game-button">start new game</button>
+    </div>
+    <ul class="letters-list">
+      <li class="letter-list__letter">A</li>
+      <li class="letter-list__letter">B</li>
+      <li class="letter-list__letter">C</li>
+      <li class="letter-list__letter">D</li>
+      <li class="letter-list__letter">E</li>
+      <li class="letter-list__letter">F</li>
+      <li class="letter-list__letter">G</li>
+      <li class="letter-list__letter">H</li>
+      <li class="letter-list__letter">I</li>
+      <li class="letter-list__letter">J</li>
+      <li class="letter-list__letter">K</li>
+      <li class="letter-list__letter">L</li>
+      <li class="letter-list__letter">M</li>
+      <li class="letter-list__letter">N</li>
+      <li class="letter-list__letter">O</li>
+      <li class="letter-list__letter">P</li>
+      <li class="letter-list__letter">Q</li>
+      <li class="letter-list__letter">R</li>
+      <li class="letter-list__letter">S</li>
+      <li class="letter-list__letter">T</li>
+      <li class="letter-list__letter">U</li>
+      <li class="letter-list__letter">V</li>
+      <li class="letter-list__letter">W</li>
+      <li class="letter-list__letter">X</li>
+      <li class="letter-list__letter">Y</li>
+      <li class="letter-list__letter">Z</li>
+    </ul>
+    <div class="hangman-container"></div>
+  </section>
+  <dialog class="greetings-dialog" id="greetings-dialog">
+    <h1 class="greetings-title">Greetings</h1>
+    <h2 class="greetings-subtitle">Welcome to our Hangman Game</h2>
+    <form class="dialog__form">
+      <input class="form-item form-word" id="input-word" name="word" maxlength="23"
+        placeholder="please enter the word..." required>
+      <textarea class="form-item form-description" id="input-description" name="description" maxlength="133"
+        placeholder="please enter the description..."></textarea>
+      <button class="form-item form-button" type="submit">Let's go!</button>
+    </form>
+  </dialog>
+  <template id="word-letter-template">
+    <div class="word-letter"></div>
+  </template>
+  <script src="./scripts/script.js"></script>
+</body>
+
+</html>

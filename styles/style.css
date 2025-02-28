@@ -1,0 +1,156 @@
+.page {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr;
+  align-items: space-between;
+  font-family: "Audiowide";
+  font-size: 24px;
+  color: #eee;
+  background-color: #373737;
+  padding: 50px;
+}
+
+/* ----------------------------------- DIALOG WINDOW ----------------------------------- */
+
+.greetings-dialog {
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  width: 700px;
+  grid-template: min-content / min-content;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #373737;
+  border: 2px solid #9900FF;
+  border-radius: 30px;
+  color: inherit;
+}
+
+.greetings-dialog::backdrop {
+  background-color: rgba(0 0 0 / 0.75);
+}
+
+.greetings-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.greetings-subtitle {
+  font-size: 28px;
+  text-align: center;
+}
+
+.dialog__form {
+  display: grid;
+  grid-template: min-content / min-content;
+  row-gap: 20px;
+  align-items: center;
+  color: inherit;
+}
+
+.form-item {
+  border: 2px solid #9900FF;
+  border-radius: 20px;
+  background-color: transparent;
+  justify-self: center;
+  text-align: center;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+.form-word {
+  width: 600px;
+  height: 92px;
+}
+
+.form-word::placeholder::after {
+  content: "*";
+}
+
+.form-description {
+  width: 600px;
+  height: 240px;
+}
+
+.form-button {
+  width: 325px;
+  height: 80px;
+  cursor: pointer;
+}
+
+/* ----------------------------------- WORD SECTION ----------------------------------- */
+
+.word-section {
+  display: grid;
+  grid-template: repeat(auto-fit, 80px) / repeat(auto-fit, 80px);
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+.word-letter {
+  inline-size: 80px;
+  block-size: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-block-end: 2px solid #9900FF;
+}
+
+/* ----------------------------------- ALPHABET ----------------------------------- */
+
+.control-items {
+  display: grid;
+  block-size: 420px;
+  grid-template: 420px / 440px 440px 320px;
+  justify-content: center;
+  gap: 30px;
+}
+
+.letters-list {
+  display: grid;
+  grid-template: repeat(5, 65px) / repeat(6, 65px);
+  gap: 10px;
+}
+
+.letter-list__letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #9900FF;
+  border-radius: 10px;
+}
+
+/* ----------------------------------- CONTROL ITEMS ----------------------------------- */
+
+.word-info {
+  display: grid;
+  grid-template: 1fr 80px / 1fr;
+  row-gap: 20px;
+}
+
+.word-description {
+  inline-size: 440px;
+  block-size: 100%;
+  border: 2px solid #9900FF;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  overflow-wrap: break-word;
+}
+
+.new-game-button {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 2px solid #9900FF;
+  border-radius: 20px;
+}
+
+/* ----------------------------------- HANGMAN ----------------------------------- */
+
+.hangman-container {
+  border: 2px solid #9900FF;
+  border-radius: 20px;
+}

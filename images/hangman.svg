@@ -1,0 +1,15 @@
+<svg width="160" height="220" viewBox="10 10 160 220" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4" fill="none">
+    <!-- Gallows -->
+    <path id="base" d="M 20 220 L 120 220" /> <!-- Base -->
+    <path id="vertical-pole" d="M 70 220 L 70 20" /> <!-- Vertical pole -->
+    <path id="top-beam" d="M 70 20 L 150 20" /> <!-- Top beam -->
+    <path id="rope" d="M 150 20 L 150 70" /> <!-- Rope -->
+
+    <!-- Hangman figure -->
+    <path id="head" d="M 150 70 A 15 15 0 1 1 149 70" /> <!-- Head -->
+    <path id="body" d="M 150 100 L 150 160" /> <!-- Body -->
+    <path id="left-arm" d="M 150 100 L 130 120" /> <!-- Left arm -->
+    <path id="right-arm" d="M 150 100 L 170 120" /> <!-- Right arm -->
+    <path id="left-leg" d="M 150 160 L 130 190" /> <!-- Left leg -->
+    <path id="right-leg" d="M 150 160 L 170 190" /> <!-- Right leg -->
+</svg>

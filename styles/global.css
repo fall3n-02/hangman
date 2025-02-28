@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+textarea {
+  padding: 25px;
+}
+
+textarea {
+  resize: none;
+}
+
+html {
+  block-size: 100%;
+}
+
+body {
+  block-size: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
