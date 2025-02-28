@@ -11,19 +11,20 @@
 
 /* ----------------------------------- DIALOG WINDOW ----------------------------------- */
 
+.dialog {
+  background-color: #373737;
+  border: 2px solid #9900FF;
+  border-radius: 30px;
+  color: inherit;
+}
+
 .greetings-dialog {
   display: grid;
-  justify-self: center;
-  align-self: center;
   width: 700px;
   grid-template: min-content / min-content;
   gap: 20px;
   justify-content: center;
   align-items: center;
-  background-color: #373737;
-  border: 2px solid #9900FF;
-  border-radius: 30px;
-  color: inherit;
 }
 
 .greetings-dialog::backdrop {
