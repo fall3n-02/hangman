@@ -13,55 +13,45 @@
 </head>
 
 <body class="page">
-  <section class="word-section">
-  </section>
+  <section class="word-section"></section>
   <section class="control-items">
     <div class="word-info">
-      <p class="word-description">description</p>
-      <button class="new-game-button">start new game</button>
+      <p class="word-description"></p>
+      <button class="reset-button" type="button" onclick="resetGame()">start new game</button>
     </div>
-    <ul class="letters-list">
-      <li class="letter-list__letter">A</li>
-      <li class="letter-list__letter">B</li>
-      <li class="letter-list__letter">C</li>
-      <li class="letter-list__letter">D</li>
-      <li class="letter-list__letter">E</li>
-      <li class="letter-list__letter">F</li>
-      <li class="letter-list__letter">G</li>
-      <li class="letter-list__letter">H</li>
-      <li class="letter-list__letter">I</li>
-      <li class="letter-list__letter">J</li>
-      <li class="letter-list__letter">K</li>
-      <li class="letter-list__letter">L</li>
-      <li class="letter-list__letter">M</li>
-      <li class="letter-list__letter">N</li>
-      <li class="letter-list__letter">O</li>
-      <li class="letter-list__letter">P</li>
-      <li class="letter-list__letter">Q</li>
-      <li class="letter-list__letter">R</li>
-      <li class="letter-list__letter">S</li>
-      <li class="letter-list__letter">T</li>
-      <li class="letter-list__letter">U</li>
-      <li class="letter-list__letter">V</li>
-      <li class="letter-list__letter">W</li>
-      <li class="letter-list__letter">X</li>
-      <li class="letter-list__letter">Y</li>
-      <li class="letter-list__letter">Z</li>
-    </ul>
-    <div class="hangman-container"></div>
+    <div class="alphabet"></div>
+    <div class="hangman-container">
+      <svg class="hangman-svg" width="160" height="220" viewBox="10 10 160 220" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4" fill="none">
+        <path id="base" d="M 20 220 L 120 220" /> <!-- Base -->
+        <path id="vertical-pole" d="M 70 220 L 70 20" /> <!-- Vertical pole -->
+        <path id="top-beam" d="M 70 20 L 150 20" /> <!-- Top beam -->
+        <path id="rope" d="M 150 20 L 150 70" /> <!-- Rope -->
+        <path id="head" d="M 150 70 A 15 15 0 1 1 149 70" /> <!-- Head -->
+        <path id="body" d="M 150 100 L 150 160" /> <!-- Body -->
+        <path id="left-arm" d="M 150 100 L 130 120" /> <!-- Left arm -->
+        <path id="right-arm" d="M 150 100 L 170 120" /> <!-- Right arm -->
+        <path id="left-leg" d="M 150 160 L 130 190" /> <!-- Left leg -->
+        <path id="right-leg" d="M 150 160 L 170 190" /> <!-- Right leg -->
+    </svg>
+    </div>
   </section>
-  <dialog class="dialog" id="greetings-dialog" open>
+  <dialog class="dialog" id="wordDialog">
     <div class="greetings-dialog">
       <h1 class="greetings-title">Greetings</h1>
       <h2 class="greetings-subtitle">Welcome to our Hangman Game</h2>
       <form class="dialog__form">
-        <input class="form-item form-word" id="input-word" name="word" maxlength="23"
-          placeholder="please enter the word..." required>
-        <textarea class="form-item form-description" id="input-description" name="description" maxlength="133"
+        <input class="form-item form-word" id="wordInput" name="word" maxlength="23"
+          placeholder="please enter the word..." type="text" oninput="toggleAlphabetButtons()" required>
+        <textarea class="form-item form-description" id="wordDescription" name="description" maxlength="133"
           placeholder="please enter the description..."></textarea>
-        <button class="form-item form-button" type="submit">Let's go!</button>
+        <button class="form-item form-button" type="button" onclick="generateBlocks()">Let's go!</button>
       </form>
     </div>
+  </dialog>
+  <dialog class="dialog" id="messageDialog">
+    <h2 class="message-title"></h2>
+    <p class="message-description"></p>
+    <button class="reset-button" type="button" onclick="resetGame()">Start new game</button>
   </dialog>
   <template id="word-letter-template">
     <div class="word-letter"></div>

@@ -154,4 +154,9 @@
 .hangman-container {
   border: 2px solid #9900FF;
   border-radius: 20px;
+  color: rgb(141, 7, 7);
+}
+
+.hangman-svg path {
+  visibility: none;
 }
