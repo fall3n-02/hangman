@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hangman</title>
   <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/variables.css" />
   <link rel="stylesheet" href="./fonts/fonts.css" />
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="icon" type="image/png" href="./images/favicon.png">
@@ -21,7 +22,8 @@
     </div>
     <div class="alphabet"></div>
     <div class="hangman-container">
-      <svg class="hangman-svg" width="160" height="220" viewBox="10 10 160 220" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="4" fill="none">
+      <svg class="hangman-svg" width="160" height="220" viewBox="10 10 160 220" xmlns="http://www.w3.org/2000/svg"
+        stroke="currentColor" stroke-width="4" fill="none">
         <path id="base" d="M 20 220 L 120 220" /> <!-- Base -->
         <path id="vertical-pole" d="M 70 220 L 70 20" /> <!-- Vertical pole -->
         <path id="top-beam" d="M 70 20 L 150 20" /> <!-- Top beam -->
@@ -32,13 +34,13 @@
         <path id="right-arm" d="M 150 100 L 170 120" /> <!-- Right arm -->
         <path id="left-leg" d="M 150 160 L 130 190" /> <!-- Left leg -->
         <path id="right-leg" d="M 150 160 L 170 190" /> <!-- Right leg -->
-    </svg>
+      </svg>
     </div>
   </section>
   <dialog class="dialog" id="wordDialog">
     <div class="greetings-dialog">
-      <h1 class="greetings-title">Greetings</h1>
-      <h2 class="greetings-subtitle">Welcome to our Hangman Game</h2>
+      <h1 class="greetings-title">Greetings!</h1>
+      <h2 class="greetings-subtitle">Welcome to our <span>Hangman</span> Game</h2>
       <form class="dialog__form">
         <input class="form-item form-word" id="wordInput" name="word" maxlength="23"
           placeholder="please enter the word..." type="text" oninput="toggleAlphabetButtons()" required>
@@ -49,13 +51,12 @@
     </div>
   </dialog>
   <dialog class="dialog" id="messageDialog">
-    <h2 class="message-title"></h2>
-    <p class="message-description"></p>
-    <button class="reset-button" type="button" onclick="resetGame()">Start new game</button>
+    <div class="message-dialog">
+      <h2 class="message-title"></h2>
+      <p class="message-description"></p>
+      <button class="reset-button" type="button" onclick="resetGame()">Start new game</button>
+    </div>
   </dialog>
-  <template id="word-letter-template">
-    <div class="word-letter"></div>
-  </template>
   <script src="./scripts/script.js"></script>
 </body>
 

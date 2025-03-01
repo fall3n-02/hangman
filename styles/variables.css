@@ -1,0 +1,35 @@
+:root {
+  --accent-color: #9e810d;
+  --font-color: #fff;
+  --bg-color: #373737;
+  --hangman-color: #97ff06;
+
+  --font-size: 24px;
+  --border-radius-m: 20px;
+  --border-radius-s: 10px;
+
+  --letter-size: 5.8vw;
+  --alphabet-letter-size: 4.6vw; /* 4.6vw 65px*/
+  --button-block-size: 80px;
+  --control-items-block-size: 30.8vw; /* 30.8vw 420px*/
+  --control-items-min-block-size: calc(var(--alphabet-letter-size) * 5 + 40px);
+  --description-inline-size: 32vw ; /* 32vw 440px*/
+  --alphabet-inline-size: 32vw ; /* 32vw 440px*/
+  --hangman-inline-size: 23.4vw; /* 23.4vw 320px*/
+}
+
+@media (width <= 1024px){
+  :root {
+    --font-size: 18px;
+    --button-block-size: 60px;
+  }
+}
+
+@media (width <= 768px) {
+  :root {
+    --font-size: 16px;
+    --button-block-size: 40px;
+    --border-radius-m: 10px;
+    --border-radius-s: 5px;
+  }
+}

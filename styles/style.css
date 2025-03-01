@@ -3,20 +3,26 @@
   grid-template: 1fr 1fr / 1fr;
   align-items: space-between;
   font-family: "Audiowide";
-  font-size: 24px;
-  color: #eee;
-  background-color: #373737;
-  padding: 50px;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  padding: 2vw;
 }
 
 /* ----------------------------------- DIALOG WINDOW ----------------------------------- */
 
 .dialog {
-  background-color: #373737;
-  border: 2px solid #9900FF;
-  border-radius: 30px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius-m);
   color: inherit;
 }
+
+.dialog::backdrop {
+  background-color: rgba(0 0 0 / 0.5);
+}
+
+/* ----------------------------------- greetings dialog ----------------------------------- */
 
 .greetings-dialog {
   display: grid;
@@ -27,18 +33,19 @@
   align-items: center;
 }
 
-.greetings-dialog::backdrop {
-  background-color: rgba(0 0 0 / 0.75);
-}
-
 .greetings-title {
   font-size: 40px;
   text-align: center;
+  text-shadow: 0px 0px 4px var(--accent-color);
 }
 
 .greetings-subtitle {
   font-size: 28px;
   text-align: center;
+}
+
+.greetings-subtitle span {
+  text-shadow: 0px 0px 4px var(--accent-color);
 }
 
 .dialog__form {
@@ -50,8 +57,8 @@
 }
 
 .form-item {
-  border: 2px solid #9900FF;
-  border-radius: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius-m);
   background-color: transparent;
   justify-self: center;
   text-align: center;
@@ -78,85 +85,127 @@
   width: 325px;
   height: 80px;
   cursor: pointer;
+  text-shadow: 0px 0px 4px var(--accent-color);
+}
+
+/* ----------------------------------- message dialog ----------------------------------- */
+
+.message-dialog {
+  inline-size: 700px;
+  block-size: 600px;
+  display: grid;
+  grid-template: min-content / min-content;
+  justify-content: center;
+  align-items: center;
+  row-gap: 50px;
+  padding: 72px 60px;
+}
+
+.message-title {
+  font-size: 96px;
+  text-align: center;
+  text-shadow: 0px 0px 6px var(--accent-color);
+}
+
+.message-description {
+  font-size: 40px;
+  inline-size: 580px;
+  block-size: 160px;
+  text-align: center;
+}
+
+/* ----------------------------------- reset-button ----------------------------------- */
+
+.reset-button {
+  block-size: var(--button-block-size);
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius-m);
+  background-color: var(--bg-color);
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  text-shadow: 0px 0px 4px var(--accent-color);
 }
 
 /* ----------------------------------- WORD SECTION ----------------------------------- */
 
 .word-section {
   display: grid;
-  grid-template: repeat(auto-fit, 80px) / repeat(auto-fit, 80px);
+  grid-template: repeat(auto-fit, var(--letter-size)) / repeat(auto-fit, var(--letter-size));
   column-gap: 20px;
+  justify-content: center;
+  align-items: center;
   row-gap: 40px;
 }
 
 .word-letter {
-  inline-size: 80px;
-  block-size: 80px;
+  inline-size: var(--letter-size);
+  block-size: var(--letter-size);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-block-end: 2px solid #9900FF;
+  border-block-end: 2px solid var(--accent-color);
 }
 
 /* ----------------------------------- ALPHABET ----------------------------------- */
 
 .control-items {
   display: grid;
-  block-size: 420px;
-  grid-template: 420px / 440px 440px 320px;
+  block-size: var(--control-items-block-size);
+  min-block-size: var(--control-items-min-block-size);
+  grid-template: var(--control-items-block-size) / var(--description-inline-size) var(--alphabet-inline-size) var(--hangman-inline-size);
   justify-content: center;
   gap: 30px;
 }
 
-.letters-list {
+.alphabet {
   display: grid;
-  grid-template: repeat(5, 65px) / repeat(6, 65px);
+  grid-template: repeat(5, var(--alphabet-letter-size)) / repeat(6, var(--alphabet-letter-size));
   gap: 10px;
 }
 
-.letter-list__letter {
+.alphabet-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #9900FF;
-  border-radius: 10px;
+  background-color: var(--bg-color);
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  border: 1px solid var(--accent-color);
+  border-radius: var(--border-radius-s);
+  cursor: pointer;
 }
 
 /* ----------------------------------- CONTROL ITEMS ----------------------------------- */
 
 .word-info {
   display: grid;
-  grid-template: 1fr 80px / 1fr;
+  grid-template: 1fr min-content / 1fr;
   row-gap: 20px;
 }
 
 .word-description {
-  inline-size: 440px;
   block-size: 100%;
-  border: 2px solid #9900FF;
-  border-radius: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius-m);
   text-align: center;
   padding: 20px;
   overflow-wrap: break-word;
 }
 
-.new-game-button {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  background-color: transparent;
-  border: 2px solid #9900FF;
-  border-radius: 20px;
-}
-
 /* ----------------------------------- HANGMAN ----------------------------------- */
 
 .hangman-container {
-  border: 2px solid #9900FF;
-  border-radius: 20px;
-  color: rgb(141, 7, 7);
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius-m);
+  color: var(--hangman-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hangman-svg path {
-  visibility: none;
+  visibility: hidden;
 }

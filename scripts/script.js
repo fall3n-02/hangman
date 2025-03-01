@@ -28,7 +28,7 @@ function generateBlocks() {
 
   for (let letter of letters) {
     let block = document.createElement("div");
-    block.className = "block";
+    block.className = "word-letter";
     block.textContent = letter;
     block.style.color = "transparent";
     block.setAttribute("data-letter", letter);
@@ -37,15 +37,15 @@ function generateBlocks() {
 }
 
 function checkLetter(letter, button) {
-  let blocks = document.querySelectorAll(".block");
+  let blocks = document.querySelectorAll(".word-letter");
   let found = false;
   blocks.forEach(block => {
     if (block.getAttribute("data-letter") === letter) {
-      block.style.color = "black";
+      block.style.color = "white";
       found = true;
     }
   });
-  button.style.backgroundColor = found ? "green" : "red";
+  button.style.backgroundColor = found ? "green" : "darkRed";
   button.disabled = true;
 
   if (!found) {
@@ -54,7 +54,7 @@ function checkLetter(letter, button) {
     if (incorrectGuesses >= maxWrongGuesses) {
       showDialog("YOU LOST", "A man died because of your lack of knowledge. Learn harder, learn more.");
     }
-  } else if ([...blocks].every(block => block.style.color === "black")) {
+  } else if ([...blocks].every(block => block.style.color === "white")) {
     showDialog("YOU WON", "Well done! You can take this man(or his part) as a prise for your victory.");
   }
 }
