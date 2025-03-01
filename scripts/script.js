@@ -55,7 +55,7 @@ function checkLetter(letter, button) {
       showDialog("YOU LOST", "A man died because of your lack of knowledge. Learn harder, learn more.");
     }
   } else if ([...blocks].every(block => block.style.color === "white")) {
-    showDialog("YOU WON", "Well done! You can take this man(or his part) as a prise for your victory.");
+    showDialog("YOU WON", "Well done! You can take this man(or his part) as a prize for your victory.");
   }
 }
 
