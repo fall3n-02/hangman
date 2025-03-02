@@ -16,6 +16,9 @@ function toggleAlphabetButtons() {
 
 function generateBlocks() {
   let input = document.getElementById("wordInput").value.toUpperCase();
+  if (input === "") {
+    return 0;
+  }
   let description = document.getElementById("wordDescription").value;
   wordContainer.innerHTML = "";
   wordDescriptionContainer.textContent = description;
